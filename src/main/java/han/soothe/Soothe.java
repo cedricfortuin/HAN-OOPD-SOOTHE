@@ -2,6 +2,9 @@ package han.soothe;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
+import han.soothe.scenes.GameField;
+import han.soothe.scenes.GameOverScreen;
+import han.soothe.scenes.TitleScreen;
 
 public class Soothe extends YaegerGame {
     public static void main(String[] args) {
@@ -17,6 +20,8 @@ public class Soothe extends YaegerGame {
 
     @Override
     public void setupScenes() {
-
+        addScene(0, new TitleScreen(this));
+        addScene(1, new GameField(this));
+        addScene(500, new GameOverScreen());
     }
 }
